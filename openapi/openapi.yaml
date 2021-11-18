@@ -35,69 +35,69 @@ tags:
     description: Company-V2-Endpoint
 paths:
   /v2/batches/{batch_id}:
-    $ref: paths\v2@batches@{batch_id}.yaml
+    $ref: paths/v2@batches@{batch_id}.yaml
   /v2/companies:
-    $ref: paths\v2@companies.yaml
+    $ref: paths/v2@companies.yaml
   /v2/companies/{company_id}:
-    $ref: paths\v2@companies@{company_id}.yaml
+    $ref: paths/v2@companies@{company_id}.yaml
   /v2/contacts:
-    $ref: paths\v2@contacts.yaml
+    $ref: paths/v2@contacts.yaml
   /v2/contacts/batch:
-    $ref: paths\v2@contacts@batch.yaml
+    $ref: paths/v2@contacts@batch.yaml
   /v2/contacts/links/types:
-    $ref: paths\v2@contacts@links@types.yaml
+    $ref: paths/v2@contacts@links@types.yaml
   /v2/contacts/{contact_id}:
-    $ref: paths\v2@contacts@{contact_id}.yaml
+    $ref: paths/v2@contacts@{contact_id}.yaml
   /v2/contacts/{contact_id}/links:
-    $ref: paths\v2@contacts@{contact_id}@links.yaml
+    $ref: paths/v2@contacts@{contact_id}@links.yaml
   /v2/contacts/{contact_id}/notes:
-    $ref: paths\v2@contacts@{contact_id}@notes.yaml
+    $ref: paths/v2@contacts@{contact_id}@notes.yaml
   /v2/contacts/{contact_id}/notes/{note_id}:
-    $ref: paths\v2@contacts@{contact_id}@notes@{note_id}.yaml
+    $ref: paths/v2@contacts@{contact_id}@notes@{note_id}.yaml
   /v2/contacts:link:
-    $ref: paths\v2@contacts@link.yaml
+    $ref: paths/v2@contacts@link.yaml
   /v2/contacts:unlink:
-    $ref: paths\v2@contacts@unlink.yaml
+    $ref: paths/v2@contacts@unlink.yaml
   /v2/leadsources:
-    $ref: paths\v2@leadsources.yaml
+    $ref: paths/v2@leadsources.yaml
   /v2/locales/countries:
-    $ref: paths\v2@locales@countries.yaml
+    $ref: paths/v2@locales@countries.yaml
   /v2/locales/countries/{country_code}/provinces:
-    $ref: paths\v2@locales@countries@{country_code}@provinces.yaml
+    $ref: paths/v2@locales@countries@{country_code}@provinces.yaml
   /v2/oauth/connect/userinfo:
-    $ref: paths\v2@oauth@connect@userinfo.yaml
+    $ref: paths/v2@oauth@connect@userinfo.yaml
   /v2/referrals:
-    $ref: paths\v2@referrals.yaml
+    $ref: paths/v2@referrals.yaml
   /v2/tags:
-    $ref: paths\v2@tags.yaml
+    $ref: paths/v2@tags.yaml
   /v2/tag-category:
-    $ref: paths\v2@tag-category.yaml
+    $ref: paths/v2@tag-category.yaml
   /v2/tag-category/{tag_id}:
-    $ref: paths\v2@tag-category@{tag_id}.yaml
+    $ref: paths/v2@tag-category@{tag_id}.yaml
   /v2/tags/{tag_id}:
-    $ref: paths\v2@tags@{tag_id}.yaml
+    $ref: paths/v2@tags@{tag_id}.yaml
   /v2/tags/{tag_id}/companies:
-    $ref: paths\v2@tags@{tag_id}@companies.yaml
+    $ref: paths/v2@tags@{tag_id}@companies.yaml
   /v2/tags/{tag_id}/contacts:
-    $ref: paths\v2@tags@{tag_id}@contacts.yaml
+    $ref: paths/v2@tags@{tag_id}@contacts.yaml
   /v2/tags/{tag_id}/contacts:applyTags:
-    $ref: paths\v2@tags@{tag_id}@contacts@applyTags.yaml
+    $ref: paths/v2@tags@{tag_id}@contacts@applyTags.yaml
   /v2/tags/{tag_id}/contacts:removeTags:
-    $ref: paths\v2@tags@{tag_id}@contacts@removeTags.yaml
+    $ref: paths/v2@tags@{tag_id}@contacts@removeTags.yaml
   /v2/tasks:
-    $ref: paths\v2@tasks.yaml
+    $ref: paths/v2@tasks.yaml
   /v2/tasks/model:
-    $ref: paths\v2@tasks@model.yaml
+    $ref: paths/v2@tasks@model.yaml
   /v2/tasks/model/customFields:
-    $ref: paths\v2@tasks@model@customFields.yaml
+    $ref: paths/v2@tasks@model@customFields.yaml
   /v2/tasks/{task_id}:
-    $ref: paths\v2@tasks@{task_id}.yaml
+    $ref: paths/v2@tasks@{task_id}.yaml
   /v2/users:
-    $ref: paths\v2@users.yaml
+    $ref: paths/v2@users.yaml
   /v2/users/{user_id}:
-    $ref: paths\v2@users@{user_id}.yaml
+    $ref: paths/v2@users@{user_id}.yaml
   /v2/users/{user_id}/signature:
-    $ref: paths\v2@users@{user_id}@signature.yaml
+    $ref: paths/v2@users@{user_id}@signature.yaml
 components:
   securitySchemes:
     oauth2:
