@@ -1,5 +1,34 @@
 # OpenAPI Definition Starter
 
+## Custom work from Dela included:
+utils.ts should be:
+
+```
+export function pathToFilename(path: string) {
+  return path
+    .replace(/~1/g, '/')
+    .replace(/~0/g, '~')
+    .substring(1)
+    .replace(/\//g, '@')
+    .replace(/\:/g, '@'); // added this line from Dela to support methods
+}
+```
+
+For a PC, post process needed to replace:
+`$ref: .\`
+with 
+`$ref: ./`
+
+Also replace, 
+`$ref: ..\components\schemas\`
+with 
+`$ref: ../components/schemas/`
+
+Also replace, 
+`$ref: paths\v2`
+with 
+`$ref: paths/v2`
+
 ## How to use this starter
 
 ![Click use template button](https://user-images.githubusercontent.com/3975738/92927304-12e35d80-f446-11ea-9bd3-a0f8a69792d0.png)
