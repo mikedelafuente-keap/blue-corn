@@ -22,25 +22,25 @@ get:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\ListNotesResponse.yaml
+            $ref: ../components/schemas/ListNotesResponse.yaml
     '401':
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '403':
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '404':
       description: Not Found
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
 post:
   tags:
     - Note
@@ -61,7 +61,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: ..\components\schemas\CreateNoteRequest.yaml
+          $ref: ../components/schemas/CreateNoteRequest.yaml
     required: true
   responses:
     '201':
@@ -69,17 +69,17 @@ post:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Note.yaml
+            $ref: ../components/schemas/Note.yaml
     '401':
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '403':
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
   x-codegen-request-body-name: request

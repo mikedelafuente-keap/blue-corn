@@ -34,25 +34,25 @@ get:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Contact.yaml
+            $ref: ../components/schemas/Contact.yaml
     '401':
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '403':
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '404':
       description: Not Found
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
 delete:
   tags:
     - Contact
@@ -75,19 +75,19 @@ delete:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '403':
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '404':
       description: Not Found
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
 patch:
   tags:
     - Contact
@@ -147,7 +147,7 @@ patch:
     content:
       application/json:
         schema:
-          $ref: ..\components\schemas\CreatePatchContactRequest.yaml
+          $ref: ../components/schemas/CreatePatchContactRequest.yaml
     required: false
   responses:
     '200':
@@ -155,23 +155,23 @@ patch:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Contact.yaml
+            $ref: ../components/schemas/Contact.yaml
     '401':
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '403':
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '404':
       description: Not Found
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
   x-codegen-request-body-name: contact

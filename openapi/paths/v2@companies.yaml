@@ -28,25 +28,25 @@ get:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\ListCompaniesResponse.yaml
+            $ref: ../components/schemas/ListCompaniesResponse.yaml
     '401':
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '403':
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '404':
       description: Not Found
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
 post:
   tags:
     - Company
@@ -58,7 +58,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: ..\components\schemas\CreateCompanyRequest.yaml
+          $ref: ../components/schemas/CreateCompanyRequest.yaml
     required: false
   responses:
     '201':
@@ -66,17 +66,17 @@ post:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Company.yaml
+            $ref: ../components/schemas/Company.yaml
     '401':
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '403':
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
   x-codegen-request-body-name: company

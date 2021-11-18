@@ -11,7 +11,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: ..\components\schemas\BatchCreateContactRequest.yaml
+          $ref: ../components/schemas/BatchCreateContactRequest.yaml
     required: false
   responses:
     '202':
@@ -19,17 +19,17 @@ post:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\CreateBatchResponse.yaml
+            $ref: ../components/schemas/CreateBatchResponse.yaml
     '401':
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '403':
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
   x-codegen-request-body-name: contacts

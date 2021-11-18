@@ -18,25 +18,25 @@ get:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\ListTasksResponse.yaml
+            $ref: ../components/schemas/ListTasksResponse.yaml
     '401':
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '403':
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '404':
       description: Not Found
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
 post:
   tags:
     - Task
@@ -48,7 +48,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: ..\components\schemas\CreateTaskRequest.yaml
+          $ref: ../components/schemas/CreateTaskRequest.yaml
     required: false
   responses:
     '201':
@@ -56,17 +56,17 @@ post:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Task.yaml
+            $ref: ../components/schemas/Task.yaml
     '401':
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '403':
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
   x-codegen-request-body-name: task

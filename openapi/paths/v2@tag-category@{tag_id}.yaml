@@ -17,25 +17,25 @@ get:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\GetTagCategoryResponse.yaml
+            $ref: ../components/schemas/GetTagCategoryResponse.yaml
     '401':
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '403':
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '404':
       description: Not Found
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
 delete:
   tags:
     - Tags
@@ -58,19 +58,19 @@ delete:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '403':
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '404':
       description: Not Found
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
 patch:
   tags:
     - Tags
@@ -103,7 +103,7 @@ patch:
     content:
       application/json:
         schema:
-          $ref: ..\components\schemas\CreateUpdateTagCategoryRequest.yaml
+          $ref: ../components/schemas/CreateUpdateTagCategoryRequest.yaml
     required: false
   responses:
     '200':
@@ -111,23 +111,23 @@ patch:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\UpdateTagCategoryResponse.yaml
+            $ref: ../components/schemas/UpdateTagCategoryResponse.yaml
     '401':
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '403':
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '404':
       description: Not Found
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
   x-codegen-request-body-name: tagCategory

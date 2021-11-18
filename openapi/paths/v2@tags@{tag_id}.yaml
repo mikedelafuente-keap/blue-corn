@@ -17,25 +17,25 @@ get:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Tag.yaml
+            $ref: ../components/schemas/Tag.yaml
     '401':
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '403':
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '404':
       description: Not Found
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
 delete:
   tags:
     - Tags
@@ -58,19 +58,19 @@ delete:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '403':
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '404':
       description: Not Found
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
 patch:
   tags:
     - Tags
@@ -104,7 +104,7 @@ patch:
     content:
       application/json:
         schema:
-          $ref: ..\components\schemas\CreateUpdateTagRequest.yaml
+          $ref: ../components/schemas/CreateUpdateTagRequest.yaml
     required: false
   responses:
     '200':
@@ -112,23 +112,23 @@ patch:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\UpdateTagResponse.yaml
+            $ref: ../components/schemas/UpdateTagResponse.yaml
     '401':
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '403':
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '404':
       description: Not Found
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
   x-codegen-request-body-name: tag

@@ -17,25 +17,25 @@ get:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Task.yaml
+            $ref: ../components/schemas/Task.yaml
     '401':
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '403':
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '404':
       description: Not Found
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
 delete:
   tags:
     - Task
@@ -58,19 +58,19 @@ delete:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '403':
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '404':
       description: Not Found
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
 patch:
   tags:
     - Task
@@ -112,7 +112,7 @@ patch:
     content:
       application/json:
         schema:
-          $ref: ..\components\schemas\CreatePatchTaskRequest.yaml
+          $ref: ../components/schemas/CreatePatchTaskRequest.yaml
     required: false
   responses:
     '200':
@@ -120,23 +120,23 @@ patch:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\UpdateTaskResponse.yaml
+            $ref: ../components/schemas/UpdateTaskResponse.yaml
     '401':
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '403':
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '404':
       description: Not Found
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
   x-codegen-request-body-name: task

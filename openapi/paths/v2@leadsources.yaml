@@ -16,25 +16,25 @@ get:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\ListLeadSourcesResponse.yaml
+            $ref: ../components/schemas/ListLeadSourcesResponse.yaml
     '401':
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '403':
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '404':
       description: Not Found
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
 post:
   tags:
     - Lead Sources
@@ -46,7 +46,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: ..\components\schemas\CreateLeadSourceRequest.yaml
+          $ref: ../components/schemas/CreateLeadSourceRequest.yaml
     required: false
   responses:
     '201':
@@ -54,17 +54,17 @@ post:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\LeadSource.yaml
+            $ref: ../components/schemas/LeadSource.yaml
     '401':
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '403':
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
   x-codegen-request-body-name: leadsource

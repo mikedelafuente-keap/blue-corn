@@ -16,7 +16,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: ..\components\schemas\ApplyRemoveTagRequest.yaml
+          $ref: ../components/schemas/ApplyRemoveTagRequest.yaml
     required: true
   responses:
     '200':
@@ -24,17 +24,17 @@ post:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\ApplyTagsResponse.yaml
+            $ref: ../components/schemas/ApplyTagsResponse.yaml
     '401':
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '403':
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
   x-codegen-request-body-name: applyRemoveTagRequest

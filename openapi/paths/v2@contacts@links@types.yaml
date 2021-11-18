@@ -9,7 +9,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: ..\components\schemas\CreateContactLinkTypeRequest.yaml
+          $ref: ../components/schemas/CreateContactLinkTypeRequest.yaml
     required: true
   responses:
     '201':
@@ -17,17 +17,17 @@ post:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\ContactLinkType.yaml
+            $ref: ../components/schemas/ContactLinkType.yaml
     '401':
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
     '403':
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\Error.yaml
+            $ref: ../components/schemas/Error.yaml
   x-codegen-request-body-name: request
