@@ -1,0 +1,40 @@
+post:
+  tags:
+    - Tags
+  summary: Apply Tags
+  description: Apply Tag to a list of contact records
+  operationId: applyTagsUsingPOST_1
+  parameters:
+    - name: tag_id
+      in: path
+      description: tag_id
+      required: true
+      schema:
+        type: string
+  requestBody:
+    description: applyRemoveTagRequest
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\ApplyRemoveTagRequest.yaml
+    required: true
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\ApplyTagsResponse.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+  x-codegen-request-body-name: applyRemoveTagRequest

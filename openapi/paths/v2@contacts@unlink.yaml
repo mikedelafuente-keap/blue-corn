@@ -1,0 +1,32 @@
+post:
+  tags:
+    - Contact
+  summary: Delete link between two contacts
+  description: >-
+    Deletes link between two contacts by using the provided contact ids and link
+    id
+  operationId: unlinkContactsUsingPOST_1
+  requestBody:
+    description: linkContactsRequest
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\LinkContactsRequest.yaml
+    required: true
+  responses:
+    '204':
+      description: No Content
+      content: {}
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+  x-codegen-request-body-name: linkContactsRequest

@@ -55,9 +55,9 @@ paths:
   /v2/contacts/{contact_id}/notes/{note_id}:
     $ref: paths\v2@contacts@{contact_id}@notes@{note_id}.yaml
   /v2/contacts:link:
-    $ref: paths\v2@contacts:link.yaml
+    $ref: paths\v2@contacts@link.yaml
   /v2/contacts:unlink:
-    $ref: paths\v2@contacts:unlink.yaml
+    $ref: paths\v2@contacts@unlink.yaml
   /v2/leadsources:
     $ref: paths\v2@leadsources.yaml
   /v2/locales/countries:
@@ -81,9 +81,9 @@ paths:
   /v2/tags/{tag_id}/contacts:
     $ref: paths\v2@tags@{tag_id}@contacts.yaml
   /v2/tags/{tag_id}/contacts:applyTags:
-    $ref: paths\v2@tags@{tag_id}@contacts:applyTags.yaml
+    $ref: paths\v2@tags@{tag_id}@contacts@applyTags.yaml
   /v2/tags/{tag_id}/contacts:removeTags:
-    $ref: paths\v2@tags@{tag_id}@contacts:removeTags.yaml
+    $ref: paths\v2@tags@{tag_id}@contacts@removeTags.yaml
   /v2/tasks:
     $ref: paths\v2@tasks.yaml
   /v2/tasks/model:

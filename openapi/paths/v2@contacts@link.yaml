@@ -1,0 +1,33 @@
+post:
+  tags:
+    - Contact
+  summary: Link a contact
+  description: Links two contacts together using the provided link type id
+  operationId: linkContactsUsingPOST_1
+  requestBody:
+    description: linkContactsRequest
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\LinkContactsRequest.yaml
+    required: true
+  responses:
+    '201':
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\ContactLink.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+  x-codegen-request-body-name: linkContactsRequest

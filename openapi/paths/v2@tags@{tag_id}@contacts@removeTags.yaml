@@ -1,0 +1,37 @@
+post:
+  tags:
+    - Tags
+  summary: Remove Tags
+  description: Remove a Tag from a list of contact records
+  operationId: removeTagsUsingPOST_1
+  parameters:
+    - name: tag_id
+      in: path
+      description: tag_id
+      required: true
+      schema:
+        type: string
+  requestBody:
+    description: applyRemoveTagRequest
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\ApplyRemoveTagRequest.yaml
+    required: true
+  responses:
+    '204':
+      description: No Content
+      content: {}
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+  x-codegen-request-body-name: applyRemoveTagRequest
