@@ -1,0 +1,8 @@
+type: object
+properties:
+  label:
+    type: string
+  options:
+    type: array
+    items:
+      $ref: .\CreateCustomFieldOptionRequest.yaml

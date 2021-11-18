@@ -1,0 +1,6 @@
+type: object
+properties:
+  results:
+    type: object
+    additionalProperties:
+      type: string

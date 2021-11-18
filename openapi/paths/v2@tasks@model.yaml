@@ -1,0 +1,31 @@
+get:
+  tags:
+    - Task
+  summary: Retrieve Task Model
+  description: Get the custom fields for the Task object
+  operationId: retrieveTaskModelUsingGET_3
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\ObjectModel.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml

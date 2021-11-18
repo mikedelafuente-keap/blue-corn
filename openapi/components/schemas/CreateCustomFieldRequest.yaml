@@ -1,0 +1,48 @@
+required:
+  - field_type
+  - label
+type: object
+properties:
+  field_type:
+    type: string
+    enum:
+      - CURRENCY
+      - DATE
+      - DATE_TIME
+      - DAY_OF_WEEK
+      - DECIMAL_NUMBER
+      - DRILLDOWN
+      - DROPDOWN
+      - EMAIL
+      - LIST_BOX
+      - MONTH
+      - NAME
+      - PERCENT
+      - PHONE_NUMBER
+      - RADIO
+      - SOCIAL_SECURITY_NUMBER
+      - STATE
+      - TEXT
+      - TEXT_AREA
+      - USER
+      - USER_LIST_BOX
+      - WEBSITE
+      - WHOLE_NUMBER
+      - YEAR
+      - YES_NO
+  group_id:
+    type: string
+    description: >-
+      An optional tab group to place the field under in the interface.  If not
+      specified, will default to the 'Custom Fields' tab.
+  label:
+    type: string
+  options:
+    type: array
+    items:
+      $ref: .\CreateCustomFieldOptionRequest.yaml
+  user_group_id:
+    type: string
+    description: >-
+      An optional user group to choose from when selecting values for User or
+      UserListBox fields.

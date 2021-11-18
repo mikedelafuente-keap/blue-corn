@@ -1,0 +1,24 @@
+type: object
+properties:
+  contact_id:
+    type: string
+  description:
+    type: string
+  expiration_time:
+    type: string
+  id:
+    type: string
+  ip_address:
+    type: string
+  referral_partner_id:
+    type: string
+  referral_time:
+    type: string
+  referral_type:
+    type: string
+    enum:
+      - COOKIE
+      - PERMANENT
+      - MANUAL
+  source:
+    type: string

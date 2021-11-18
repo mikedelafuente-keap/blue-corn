@@ -1,0 +1,35 @@
+type: object
+properties:
+  create_time:
+    type: string
+  created:
+    type: integer
+    format: int32
+  created_by_user_id:
+    type: string
+  failed:
+    type: integer
+    format: int32
+  id:
+    type: string
+  record_type:
+    type: string
+    enum:
+      - CONTACT
+      - COMPANY
+      - NOTE
+      - TAG
+      - TASK
+  records:
+    type: array
+    items:
+      $ref: .\BatchResult.yaml
+  status:
+    type: string
+    enum:
+      - COMPLETE
+      - ERROR
+      - PROCESSING
+  total:
+    type: integer
+    format: int32

@@ -1,0 +1,91 @@
+get:
+  tags:
+    - Contact
+  summary: List Contacts
+  description: Retrieves a list of contacts
+  operationId: listContactsUsingGET_3
+  parameters:
+    - name: filter
+      in: query
+      description: Search filter to apply to results
+      schema:
+        type: string
+    - name: page_token
+      in: query
+      description: page token
+      schema:
+        type: string
+    - name: order_by
+      in: query
+      description: Attribute and direction to order items by. E.g. 'given_name desc'
+      schema:
+        type: string
+    - name: page_size
+      in: query
+      description: Total number of items to return per page
+      schema:
+        maximum: 1000
+        minimum: 1
+        type: integer
+        format: int32
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\ListContactsResponse.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+post:
+  tags:
+    - Contact
+  summary: Create a Contact
+  description: >-
+    Creates a new contact as the authenticated user. NB: Contact must contain at
+    least one item in `email_addresses` or `phone_numbers` and `country_code` is
+    required if `region` is specified.
+  operationId: createContactUsingPOST_3
+  requestBody:
+    description: contact
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\CreatePatchContactRequest.yaml
+    required: false
+  responses:
+    '201':
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Contact.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+  x-codegen-request-body-name: contact

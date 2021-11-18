@@ -1,0 +1,8 @@
+type: object
+properties:
+  next_page_token:
+    type: string
+  tagged_companies:
+    type: array
+    items:
+      $ref: .\TaggedCompany.yaml

@@ -1,0 +1,35 @@
+post:
+  tags:
+    - Contact
+  summary: Batch Create Contact
+  description: >-
+    Creates up to 1000 Contacts.See POST /contacts for individual payload
+    specifics.
+  operationId: batchCreateContactsUsingPOST_1
+  requestBody:
+    description: contacts
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\BatchCreateContactRequest.yaml
+    required: false
+  responses:
+    '202':
+      description: Accepted
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\CreateBatchResponse.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+  x-codegen-request-body-name: contacts

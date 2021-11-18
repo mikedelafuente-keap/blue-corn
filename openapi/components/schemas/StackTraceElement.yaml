@@ -1,0 +1,13 @@
+type: object
+properties:
+  className:
+    type: string
+  fileName:
+    type: string
+  lineNumber:
+    type: integer
+    format: int32
+  methodName:
+    type: string
+  nativeMethod:
+    type: boolean

@@ -1,0 +1,9 @@
+required:
+  - provinces
+type: object
+properties:
+  provinces:
+    type: array
+    description: A key-value pair of province code and province name.
+    items:
+      $ref: .\Provinces.yaml

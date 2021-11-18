@@ -1,0 +1,133 @@
+get:
+  tags:
+    - Tags
+  summary: Retrieve a Tag Category
+  description: Returns the tag category with the specified category_id
+  operationId: getCategoryUsingGET_1
+  parameters:
+    - name: tag_id
+      in: path
+      description: tag_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\GetTagCategoryResponse.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+delete:
+  tags:
+    - Tags
+  summary: Delete Tag Category
+  description: Deletes the specified Tag Category
+  operationId: deleteTagCategoryUsingDELETE_1
+  parameters:
+    - name: tag_id
+      in: path
+      description: tag_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      description: No Content
+      content: {}
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+patch:
+  tags:
+    - Tags
+  summary: Update a Tag Category
+  description: Updates a tag category with only the values provided in the request
+  operationId: patchTagCategoryUsingPATCH_1
+  parameters:
+    - name: tag_id
+      in: path
+      description: tag_id
+      required: true
+      schema:
+        type: string
+    - name: update_mask
+      in: query
+      description: >-
+        An optional list of fields to be updated. If set, only the fields
+        provided in the update_mask will be updated and others will be skipped.
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+          enum:
+            - name
+            - description
+  requestBody:
+    description: tagCategory
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\CreateUpdateTagCategoryRequest.yaml
+    required: false
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\UpdateTagCategoryResponse.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+  x-codegen-request-body-name: tagCategory

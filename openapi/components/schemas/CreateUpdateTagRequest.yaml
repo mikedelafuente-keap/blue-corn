@@ -1,0 +1,8 @@
+type: object
+properties:
+  category:
+    $ref: .\CategoryReference.yaml
+  description:
+    type: string
+  name:
+    type: string

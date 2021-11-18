@@ -1,0 +1,12 @@
+type: object
+properties:
+  field:
+    type: string
+    enum:
+      - FAX_NUMBER_FIELD_UNSPECIFIED
+      - FAX1
+      - FAX2
+  number:
+    type: string
+  type:
+    type: string

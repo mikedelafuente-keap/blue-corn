@@ -1,0 +1,72 @@
+get:
+  tags:
+    - Task
+  summary: List Tasks
+  description: >-
+    Retrieve a list of tasks based on the provided filter. Tasks which are not
+    assigned to a User may be queried with user_id==UNASSIGNED.
+  operationId: listTasksUsingGET_3
+  parameters:
+    - name: filter
+      in: query
+      description: Search filter to apply to results
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\ListTasksResponse.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+post:
+  tags:
+    - Task
+  summary: Create a Task
+  description: Creates a new task as the authenticated user.
+  operationId: createTaskUsingPOST_3
+  requestBody:
+    description: task
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\CreateTaskRequest.yaml
+    required: false
+  responses:
+    '201':
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Task.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+  x-codegen-request-body-name: task

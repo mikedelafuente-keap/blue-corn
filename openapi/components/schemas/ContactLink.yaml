@@ -1,0 +1,10 @@
+type: object
+properties:
+  contact1_id:
+    type: string
+  contact2_id:
+    type: string
+  link_type_id:
+    type: string
+  link_type_name:
+    type: string

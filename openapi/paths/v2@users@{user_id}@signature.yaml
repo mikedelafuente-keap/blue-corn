@@ -1,0 +1,38 @@
+get:
+  tags:
+    - Users
+  summary: Get User email signature
+  description: Retrieves a HTML snippet that contains the user's email signature.
+  operationId: getUserSignatureUsingGET_3
+  parameters:
+    - name: user_id
+      in: path
+      description: user_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: string
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml

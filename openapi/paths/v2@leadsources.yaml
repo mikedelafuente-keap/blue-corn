@@ -1,0 +1,70 @@
+get:
+  tags:
+    - Lead Sources
+  summary: List Lead Sources
+  description: Retrieves a list of lead sources
+  operationId: listLeadSourcesUsingGET_1
+  parameters:
+    - name: filter
+      in: query
+      description: Search filter to apply to results
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\ListLeadSourcesResponse.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+post:
+  tags:
+    - Lead Sources
+  summary: Create a Lead Source
+  description: Creates a new Lead Source
+  operationId: createLeadSourceUsingPOST_1
+  requestBody:
+    description: leadsource
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\CreateLeadSourceRequest.yaml
+    required: false
+  responses:
+    '201':
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\LeadSource.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+  x-codegen-request-body-name: leadsource

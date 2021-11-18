@@ -1,0 +1,19 @@
+type: object
+properties:
+  email:
+    type: string
+  family_name:
+    type: string
+  given_name:
+    type: string
+  id:
+    type: integer
+    format: int64
+  keap_id:
+    type: string
+  middle_name:
+    type: string
+  preferred_name:
+    type: string
+  sub:
+    type: string

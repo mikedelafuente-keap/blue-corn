@@ -1,0 +1,38 @@
+get:
+  tags:
+    - Contact
+  summary: List contact links
+  description: Retrieves a list of linked contacts
+  operationId: listContactLinksUsingGET_1
+  parameters:
+    - name: contact_id
+      in: path
+      description: contact_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\ListContactLinksResponse.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml

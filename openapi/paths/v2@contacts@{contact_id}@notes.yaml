@@ -1,0 +1,85 @@
+get:
+  tags:
+    - Note
+  summary: List Notes
+  description: Retrieves a list of notes
+  operationId: listNotesUsingGET_2
+  parameters:
+    - name: contact_id
+      in: path
+      description: contact_id
+      required: true
+      schema:
+        type: string
+    - name: filter
+      in: query
+      description: Search filter to apply to results
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\ListNotesResponse.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+post:
+  tags:
+    - Note
+  summary: Create a Note
+  description: >-
+    Creates a new note as the authenticated user. Either a "title" or "body" is
+    required
+  operationId: createNoteUsingPOST_2
+  parameters:
+    - name: contact_id
+      in: path
+      description: contact_id
+      required: true
+      schema:
+        type: string
+  requestBody:
+    description: request
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\CreateNoteRequest.yaml
+    required: true
+  responses:
+    '201':
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Note.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+  x-codegen-request-body-name: request

@@ -1,0 +1,82 @@
+get:
+  tags:
+    - Company
+  summary: List Companies
+  description: Retrieves a list of all Companies
+  operationId: listCompaniesUsingGET_3
+  parameters:
+    - name: filter
+      in: query
+      description: Search filter to apply to results
+      schema:
+        type: string
+    - name: fields
+      in: query
+      description: >-
+        Comma-delimited list of Company properties to include in the response.
+        (Fields such as `notes`, `fax_number` and `custom_fields` aren't
+        included, by default.)
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\ListCompaniesResponse.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+post:
+  tags:
+    - Company
+  summary: Create a Company
+  description: Creates a new Company.`country_code` is required if `region` is specified.
+  operationId: createCompanyUsingPOST_3
+  requestBody:
+    description: company
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\CreateCompanyRequest.yaml
+    required: false
+  responses:
+    '201':
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Company.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+  x-codegen-request-body-name: company

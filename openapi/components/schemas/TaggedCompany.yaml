@@ -1,0 +1,6 @@
+type: object
+properties:
+  applied_time:
+    type: string
+  company:
+    $ref: .\Company.yaml

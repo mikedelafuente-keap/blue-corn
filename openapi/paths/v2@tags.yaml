@@ -1,0 +1,72 @@
+get:
+  tags:
+    - Tags
+  summary: List Tags
+  description: |-
+    Retrieve a list of tags defined in the application.
+    To search for null or empty fields use filter==NONE
+  operationId: listTagsUsingGET_3
+  parameters:
+    - name: filter
+      in: query
+      description: Search filter to apply to results
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\ListTagsResponse.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+post:
+  tags:
+    - Tags
+  summary: Create Tag
+  description: Create a new tag
+  operationId: createTagUsingPOST_3
+  requestBody:
+    description: tag
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\CreateUpdateTagRequest.yaml
+    required: true
+  responses:
+    '201':
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Tag.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+  x-codegen-request-body-name: tag

@@ -1,0 +1,10 @@
+type: object
+properties:
+  id:
+    type: string
+  label:
+    type: string
+  options:
+    type: array
+    items:
+      $ref: .\CustomFieldOption.yaml

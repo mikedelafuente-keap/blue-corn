@@ -1,19 +1,59 @@
 type: object
 properties:
-  username:
-    description: User supplied username
+  address:
+    $ref: .\Address.yaml
+  admin:
+    type: boolean
+  company_name:
     type: string
-    minLength: 4
-    example: John78
-  firstName:
-    description: User first name
+  create_time:
     type: string
-    minLength: 1
-    example: John
-  lastName:
-    description: User last name
+  created_by:
+    type: integer
+    format: int64
+  email_address:
+    $ref: .\EmailAddress.yaml
+  family_name:
     type: string
-    minLength: 1
-    example: Smith
-  email:
-    $ref: ./Email.yaml
+  fax_numbers:
+    type: array
+    items:
+      $ref: .\FaxNumber.yaml
+  given_name:
+    type: string
+  global_user_id:
+    type: integer
+    format: int64
+  id:
+    type: integer
+    format: int64
+  keap_id:
+    type: string
+  partner:
+    type: boolean
+  phone_numbers:
+    type: array
+    items:
+      $ref: .\PhoneNumber.yaml
+  social_accounts:
+    type: array
+    items:
+      $ref: .\SocialAccount.yaml
+  status:
+    type: string
+    enum:
+      - Active
+      - Invited
+      - Inactive
+      - NotAUser
+  time_zone:
+    type: string
+  title:
+    type: string
+  update_time:
+    type: string
+  updated_by:
+    type: integer
+    format: int64
+  website:
+    type: string

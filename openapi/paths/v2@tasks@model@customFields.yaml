@@ -1,0 +1,33 @@
+post:
+  tags:
+    - Task
+  summary: Create a Custom Field
+  description: Adds a custom field of the specified type and options to the Task object.
+  operationId: createTaskCustomFieldUsingPOST_3
+  requestBody:
+    description: customField
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\CreateCustomFieldRequest.yaml
+    required: true
+  responses:
+    '201':
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\CreateCustomFieldResponse.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+  x-codegen-request-body-name: customField

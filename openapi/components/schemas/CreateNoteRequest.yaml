@@ -1,0 +1,17 @@
+required:
+  - user_id
+type: object
+properties:
+  text:
+    type: string
+  title:
+    type: string
+    description: A value for either "title" or "type" is required.
+  type:
+    type: string
+    description: >-
+      A value for either "title" or "type" is required. The value may be one of
+      "Appointment", "Call", "Email", "Fax", "Letter" or "Other" in Keap
+      Max/Pro, or an admin-configured value in Classic.
+  user_id:
+    type: string

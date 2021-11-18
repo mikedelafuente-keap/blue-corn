@@ -1,0 +1,9 @@
+type: object
+properties:
+  id:
+    type: string
+  max_links:
+    type: integer
+    format: int64
+  name:
+    type: string

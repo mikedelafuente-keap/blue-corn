@@ -1,0 +1,37 @@
+type: object
+properties:
+  assigned_to_user_id:
+    type: string
+  completed:
+    type: boolean
+  completion_time:
+    type: string
+  contact_id:
+    type: string
+  description:
+    type: string
+  due_time:
+    type: string
+  priority:
+    type: string
+    enum:
+      - CRITICAL
+      - ESSENTIAL
+      - NONESSENTIAL
+  remind_time_mins:
+    type: integer
+    description: >-
+      Value in minutes before start_date to show pop-up reminder.  Acceptable
+      values are [5,10,15,30,60,120,240,480,1440,2880]
+    format: int32
+  title:
+    type: string
+  type:
+    type: string
+    enum:
+      - EMAIL
+      - CALL
+      - APPOINTMENT
+      - FAX
+      - LETTER
+      - OTHER

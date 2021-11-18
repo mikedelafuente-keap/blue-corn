@@ -1,0 +1,45 @@
+get:
+  tags:
+    - Tags
+  summary: Retrieve a list of contacts with specific tag
+  description: |-
+    Retrieve a list of contacts
+    To search for null or empty fields use filter==NONE
+  operationId: listContactsWithTagIdUsingGET_1
+  parameters:
+    - name: tag_id
+      in: path
+      description: tag_id
+      required: true
+      schema:
+        type: string
+    - name: filter
+      in: query
+      description: Search filter to apply to results
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\ListTaggedContactsResponse.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml

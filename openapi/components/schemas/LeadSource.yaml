@@ -1,0 +1,22 @@
+type: object
+properties:
+  category:
+    $ref: .\LeadSourceCategory.yaml
+  description:
+    type: string
+  end_time:
+    type: string
+  id:
+    type: string
+  medium:
+    type: string
+  message:
+    type: string
+  name:
+    type: string
+  start_time:
+    type: string
+  status_is_active:
+    type: boolean
+  vendor:
+    type: string

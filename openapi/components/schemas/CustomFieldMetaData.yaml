@@ -1,0 +1,48 @@
+type: object
+properties:
+  field_type:
+    type: string
+    enum:
+      - CURRENCY
+      - DATE
+      - DATE_TIME
+      - DAY_OF_WEEK
+      - DECIMAL_NUMBER
+      - DRILLDOWN
+      - DROPDOWN
+      - EMAIL
+      - LIST_BOX
+      - MONTH
+      - NAME
+      - PERCENT
+      - PHONE_NUMBER
+      - RADIO
+      - SOCIAL_SECURITY_NUMBER
+      - STATE
+      - TEXT
+      - TEXT_AREA
+      - USER
+      - USER_LIST_BOX
+      - WEBSITE
+      - WHOLE_NUMBER
+      - YEAR
+      - YES_NO
+  id:
+    type: integer
+    format: int64
+  label:
+    type: string
+  options:
+    type: array
+    items:
+      $ref: .\CustomFieldOption.yaml
+  record_type:
+    type: string
+    enum:
+      - CONTACT
+      - REFERRAL_PARTNER
+      - OPPORTUNITY
+      - TASK_NOTE_APPOINTMENT
+      - COMPANY
+      - ORDER
+      - SUBSCRIPTION

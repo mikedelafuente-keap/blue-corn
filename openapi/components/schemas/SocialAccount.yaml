@@ -1,0 +1,17 @@
+required:
+  - type
+type: object
+properties:
+  name:
+    type: string
+  type:
+    type: string
+    enum:
+      - SOCIAL_ACCOUNT_TYPE_UNSPECIFIED
+      - FACEBOOK
+      - LINKED_IN
+      - TWITTER
+      - INSTAGRAM
+      - SNAPCHAT
+      - YOUTUBE
+      - PINTEREST

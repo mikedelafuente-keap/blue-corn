@@ -1,54 +1,109 @@
-openapi: 3.1.0
+openapi: 3.0.1
 info:
-  version: 1.0.0
-  title: Example.com
-  termsOfService: 'https://example.com/terms/'
+  title: Keap REST API
+  termsOfService: https://keap.com/legal
   contact:
-    email: contact@example.com
-    url: 'http://weekendproject.app/contact'
+    name: Keap
+    url: https://developer.keap.com/get-support/
   license:
     name: Apache 2.0
-    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-  x-logo:
-    url: 'https://redocly.github.io/openapi-template/logo.png'
-  description:
-    $ref: ./info-description.md
-externalDocs:
-  description: Find out how to create a GitHub repo for your OpenAPI definition.
-  url: 'https://github.com/Rebilly/generator-openapi-repo'
-tags:
-  - name: Echo
-    description: Example echo operations.
-  - name: User
-    description: Operations about users.
-  - name: Tag
-    description: This is a tag description.
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  description: An API for interacting with Keap
+  version: 2.70.0.407641
 servers:
-  - url: 'http://weekendproject.app/api/v1'
-  - url: 'https://weekendproject.app/api/v1'
+  - url: https://api.infusionsoft.com/crm/rest
+tags:
+  - name: Note
+    description: Notes-V2-Endpoint
+  - name: Batch
+    description: Batch-V2-Endpoint
+  - name: Locale
+    description: Locale-V2-Endpoint
+  - name: Users
+    description: Rest User Controller
+  - name: Referral
+    description: Referrals-V2-Endpoint
+  - name: Lead Sources
+    description: Lead-Sources-V2-Endpoint
+  - name: Contact
+    description: Contacts-V2-Endpoint
+  - name: Task
+    description: Tasks-V2-Endpoint
+  - name: Tags
+    description: Tags-V2-Endpoint
+  - name: Company
+    description: Company-V2-Endpoint
 paths:
-  '/users/{username}':
-    $ref: 'paths/users@{username}.yaml'
-  /echo:
-    $ref: paths/echo.yaml
-  /pathItem:
-    $ref: paths/path-item.yaml
-  /pathItemWithExamples:
-    $ref: paths/path-item-with-examples.yaml
+  /v2/batches/{batch_id}:
+    $ref: paths\v2@batches@{batch_id}.yaml
+  /v2/companies:
+    $ref: paths\v2@companies.yaml
+  /v2/companies/{company_id}:
+    $ref: paths\v2@companies@{company_id}.yaml
+  /v2/contacts:
+    $ref: paths\v2@contacts.yaml
+  /v2/contacts/batch:
+    $ref: paths\v2@contacts@batch.yaml
+  /v2/contacts/links/types:
+    $ref: paths\v2@contacts@links@types.yaml
+  /v2/contacts/{contact_id}:
+    $ref: paths\v2@contacts@{contact_id}.yaml
+  /v2/contacts/{contact_id}/links:
+    $ref: paths\v2@contacts@{contact_id}@links.yaml
+  /v2/contacts/{contact_id}/notes:
+    $ref: paths\v2@contacts@{contact_id}@notes.yaml
+  /v2/contacts/{contact_id}/notes/{note_id}:
+    $ref: paths\v2@contacts@{contact_id}@notes@{note_id}.yaml
+  /v2/contacts:link:
+    $ref: paths\v2@contacts:link.yaml
+  /v2/contacts:unlink:
+    $ref: paths\v2@contacts:unlink.yaml
+  /v2/leadsources:
+    $ref: paths\v2@leadsources.yaml
+  /v2/locales/countries:
+    $ref: paths\v2@locales@countries.yaml
+  /v2/locales/countries/{country_code}/provinces:
+    $ref: paths\v2@locales@countries@{country_code}@provinces.yaml
+  /v2/oauth/connect/userinfo:
+    $ref: paths\v2@oauth@connect@userinfo.yaml
+  /v2/referrals:
+    $ref: paths\v2@referrals.yaml
+  /v2/tags:
+    $ref: paths\v2@tags.yaml
+  /v2/tag-category:
+    $ref: paths\v2@tag-category.yaml
+  /v2/tag-category/{tag_id}:
+    $ref: paths\v2@tag-category@{tag_id}.yaml
+  /v2/tags/{tag_id}:
+    $ref: paths\v2@tags@{tag_id}.yaml
+  /v2/tags/{tag_id}/companies:
+    $ref: paths\v2@tags@{tag_id}@companies.yaml
+  /v2/tags/{tag_id}/contacts:
+    $ref: paths\v2@tags@{tag_id}@contacts.yaml
+  /v2/tags/{tag_id}/contacts:applyTags:
+    $ref: paths\v2@tags@{tag_id}@contacts:applyTags.yaml
+  /v2/tags/{tag_id}/contacts:removeTags:
+    $ref: paths\v2@tags@{tag_id}@contacts:removeTags.yaml
+  /v2/tasks:
+    $ref: paths\v2@tasks.yaml
+  /v2/tasks/model:
+    $ref: paths\v2@tasks@model.yaml
+  /v2/tasks/model/customFields:
+    $ref: paths\v2@tasks@model@customFields.yaml
+  /v2/tasks/{task_id}:
+    $ref: paths\v2@tasks@{task_id}.yaml
+  /v2/users:
+    $ref: paths\v2@users.yaml
+  /v2/users/{user_id}:
+    $ref: paths\v2@users@{user_id}.yaml
+  /v2/users/{user_id}/signature:
+    $ref: paths\v2@users@{user_id}@signature.yaml
 components:
   securitySchemes:
-    main_auth:
+    oauth2:
       type: oauth2
       flows:
-        implicit:
-          authorizationUrl: 'http://example.com/api/oauth/dialog'
-          scopes:
-            'read:users': read users info
-            'write:users': modify or remove users
-    api_key:
-      type: apiKey
-      in: header
-      name: api_key
-    basic_auth:
-      type: http
-      scheme: basic
+        authorizationCode:
+          authorizationUrl: https://accounts.infusionsoft.com/app/oauth/authorize
+          tokenUrl: https://api.infusionsoft.com/token
+          scopes: {}

@@ -1,0 +1,34 @@
+get:
+  tags:
+    - Users
+  summary: Retrieve User Info
+  description: >-
+    Retrieves information for the current authenticated end-user, as outlined by
+    the [OpenID Connect
+    specification](http://openid.net/specs/openid-connect-core-1_0.html#UserInfo).
+  operationId: getUserInfoUsingGET_3
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\GetUserInfoResponse.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml

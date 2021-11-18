@@ -1,0 +1,106 @@
+get:
+  tags:
+    - Users
+  summary: Get User
+  description: Retrieves a specific User
+  operationId: getUserByIdUsingGET_1
+  parameters:
+    - name: user_id
+      in: path
+      description: user_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\User.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+patch:
+  tags:
+    - Users
+  summary: Update User
+  description: Updates information on a specific User
+  operationId: patchUserUsingPATCH_1
+  parameters:
+    - name: user_id
+      in: path
+      description: user_id
+      required: true
+      schema:
+        type: string
+    - name: update_mask
+      in: query
+      description: >-
+        An optional list of fields to be updated. If set, only the provided
+        fields will be updated and others will be skipped.
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+          enum:
+            - address
+            - company_name
+            - email_address
+            - family_name
+            - fax_numbers
+            - given_name
+            - job_title
+            - phone_numbers
+            - time_zone
+            - website
+  requestBody:
+    description: user
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\PatchUserRequestV2.yaml
+    required: false
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\User.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+  x-codegen-request-body-name: user

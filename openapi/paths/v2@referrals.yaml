@@ -1,0 +1,33 @@
+post:
+  tags:
+    - Referral
+  summary: Create a Referral
+  description: Creates a new referral partner referral on the provided contact
+  operationId: createReferralUsingPOST_1
+  requestBody:
+    description: request
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\CreateReferralRequest.yaml
+    required: true
+  responses:
+    '201':
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Referral.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+  x-codegen-request-body-name: request

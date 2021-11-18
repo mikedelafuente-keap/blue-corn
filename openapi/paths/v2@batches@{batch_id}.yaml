@@ -1,0 +1,38 @@
+get:
+  tags:
+    - Batch
+  summary: Retrieve a Batch
+  description: Retrieves details of a batch
+  operationId: getBatchUsingGET
+  parameters:
+    - name: batch_id
+      in: path
+      description: batch_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Batch.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml

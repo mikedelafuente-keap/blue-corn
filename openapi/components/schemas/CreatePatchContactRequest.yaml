@@ -1,0 +1,80 @@
+type: object
+properties:
+  addresses:
+    type: array
+    items:
+      $ref: .\Address.yaml
+  anniversary_date:
+    type: string
+  birth_date:
+    type: string
+  company:
+    $ref: .\BasicCompany.yaml
+  contact_type:
+    type: string
+  custom_fields:
+    type: array
+    items:
+      $ref: .\CustomFieldValue.yaml
+  email_addresses:
+    type: array
+    items:
+      $ref: .\EmailAddressRequest.yaml
+  family_name:
+    type: string
+  fax_numbers:
+    type: array
+    items:
+      $ref: .\FaxNumber.yaml
+  given_name:
+    type: string
+  job_title:
+    type: string
+  leadsource_id:
+    type: string
+  middle_name:
+    type: string
+  origin:
+    $ref: .\OriginRequest.yaml
+  owner_id:
+    type: string
+  phone_numbers:
+    type: array
+    items:
+      $ref: .\PhoneNumber.yaml
+  preferred_locale:
+    type: string
+    example: en_US
+  preferred_name:
+    type: string
+  prefix:
+    type: string
+  referral_code:
+    type: string
+  social_accounts:
+    type: array
+    items:
+      $ref: .\SocialAccount.yaml
+  source_type:
+    type: string
+    enum:
+      - SOURCE_TYPE_UNSPECIFIED
+      - API
+      - APPOINTMENT
+      - FORM_API_HOSTED
+      - FORM_API_INTERNAL
+      - IMPORT
+      - INTERNAL_FORM
+      - LANDING_PAGE
+      - MANUAL
+      - OTHER
+      - UNKNOWN
+      - WEBFORM
+  spouse_name:
+    type: string
+  suffix:
+    type: string
+  time_zone:
+    type: string
+  website:
+    type: string

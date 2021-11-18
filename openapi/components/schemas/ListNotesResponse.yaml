@@ -1,0 +1,8 @@
+type: object
+properties:
+  next_page_token:
+    type: string
+  notes:
+    type: array
+    items:
+      $ref: .\Note.yaml

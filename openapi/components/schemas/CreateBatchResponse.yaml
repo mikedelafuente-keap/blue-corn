@@ -1,0 +1,8 @@
+type: object
+properties:
+  create_time:
+    type: string
+  created_by_user_id:
+    type: string
+  id:
+    type: string

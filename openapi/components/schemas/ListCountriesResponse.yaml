@@ -1,0 +1,9 @@
+required:
+  - countries
+type: object
+properties:
+  countries:
+    type: array
+    description: A key-value pair of country code and country name.
+    items:
+      $ref: .\Country.yaml

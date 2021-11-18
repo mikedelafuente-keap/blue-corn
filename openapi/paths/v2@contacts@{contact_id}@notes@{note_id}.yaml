@@ -1,0 +1,154 @@
+get:
+  tags:
+    - Note
+  summary: Get a Note
+  description: Get the specified note
+  operationId: getNoteUsingGET_2
+  parameters:
+    - name: contact_id
+      in: path
+      description: contact_id
+      required: true
+      schema:
+        type: string
+    - name: note_id
+      in: path
+      description: note_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\GetNoteResponse.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+delete:
+  tags:
+    - Note
+  summary: Delete a Note
+  description: Deletes the specified note
+  operationId: deleteNoteUsingDELETE_2
+  parameters:
+    - name: contact_id
+      in: path
+      description: contact_id
+      required: true
+      schema:
+        type: string
+    - name: note_id
+      in: path
+      description: note_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      description: No Content
+      content: {}
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+patch:
+  tags:
+    - Note
+  summary: Update a note
+  description: Update a note for a contact
+  operationId: updateNoteUsingPATCH
+  parameters:
+    - name: contact_id
+      in: path
+      description: contact_id
+      required: true
+      schema:
+        type: string
+    - name: note_id
+      in: path
+      description: note_id
+      required: true
+      schema:
+        type: string
+    - name: update_mask
+      in: query
+      description: >-
+        An optional list of fields to be updated. If set, only the provided
+        properties will be updated and others will be skipped.
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+          enum:
+            - contact_id
+            - text
+            - title
+            - type
+            - user_id
+  requestBody:
+    description: updateNoteRequest
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\UpdateNoteRequest.yaml
+    required: true
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\UpdateNoteResponse.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+  x-codegen-request-body-name: updateNoteRequest

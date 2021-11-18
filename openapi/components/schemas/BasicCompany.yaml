@@ -1,0 +1,6 @@
+type: object
+properties:
+  company_name:
+    type: string
+  id:
+    type: string

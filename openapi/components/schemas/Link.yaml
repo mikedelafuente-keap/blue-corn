@@ -1,0 +1,8 @@
+type: object
+properties:
+  id:
+    type: string
+  link_type_id:
+    type: string
+  linked_contact_id:
+    type: string

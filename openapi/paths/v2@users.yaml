@@ -1,0 +1,78 @@
+get:
+  tags:
+    - Users
+  summary: List Users
+  description: Retrieves a list of users
+  operationId: listUsersUsingGET_3
+  parameters:
+    - name: filter
+      in: query
+      description: Search filter to apply to results
+      schema:
+        type: string
+    - name: order_by
+      in: query
+      description: Attribute and direction to order items by. E.g. 'given_name desc'
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\ListUserResponse.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+post:
+  tags:
+    - Users
+  summary: Create a User
+  description: >-
+    Creates a new user record. NB: Users will be invited to the application and
+    remain in the "Invited" status until the user accepts the invite. "Inactive"
+    users will not take up a user license.
+  operationId: createUserUsingPOST_3
+  requestBody:
+    description: user
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\CreateUserRequestV2.yaml
+    required: false
+  responses:
+    '201':
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\User.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+  x-codegen-request-body-name: user

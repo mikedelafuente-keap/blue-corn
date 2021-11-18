@@ -1,0 +1,17 @@
+type: object
+properties:
+  extension:
+    type: string
+  field:
+    type: string
+    enum:
+      - PHONE_NUMBER_FIELD_UNSPECIFIED
+      - PHONE1
+      - PHONE2
+      - PHONE3
+      - PHONE4
+      - PHONE5
+  number:
+    type: string
+  type:
+    type: string

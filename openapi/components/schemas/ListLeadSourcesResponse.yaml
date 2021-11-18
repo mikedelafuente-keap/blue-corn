@@ -1,0 +1,8 @@
+type: object
+properties:
+  leadsources:
+    type: array
+    items:
+      $ref: .\LeadSource.yaml
+  next_page_token:
+    type: string

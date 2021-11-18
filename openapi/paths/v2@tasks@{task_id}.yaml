@@ -1,0 +1,142 @@
+get:
+  tags:
+    - Task
+  summary: Retrieve a Task
+  description: Retrieves a single task
+  operationId: getTaskUsingGET_3
+  parameters:
+    - name: task_id
+      in: path
+      description: task_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Task.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+delete:
+  tags:
+    - Task
+  summary: Delete a Task
+  description: Deletes a single task
+  operationId: deleteTaskUsingDELETE_3
+  parameters:
+    - name: task_id
+      in: path
+      description: task_id
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      description: No Content
+      content: {}
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+patch:
+  tags:
+    - Task
+  summary: Update a Task
+  description: Updates a task with only the values provided in the request
+  operationId: patchTaskUsingPATCH_1
+  parameters:
+    - name: task_id
+      in: path
+      description: task_id
+      required: true
+      schema:
+        type: string
+    - name: update_mask
+      in: query
+      description: >-
+        An optional list of properties to be updated. If set, only the provided
+        properties will be updated and others will be skipped.
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+          enum:
+            - id
+            - title
+            - description
+            - type
+            - priority
+            - completion_time
+            - due_time
+            - remind_time_mins
+            - assigned_to_user_id
+            - contact_id
+            - completed
+  requestBody:
+    description: task
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\CreatePatchTaskRequest.yaml
+    required: false
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\UpdateTaskResponse.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+  x-codegen-request-body-name: task

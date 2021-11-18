@@ -1,0 +1,45 @@
+type: object
+properties:
+  assigned_to_user_id:
+    type: string
+  completed:
+    type: boolean
+  completion_time:
+    type: string
+  contact_id:
+    type: string
+  create_time:
+    type: string
+    description: >-
+      On initial object the returned value for this property may not accurately
+      represent the exact stored value.
+  created_by_user_id:
+    type: string
+  description:
+    type: string
+  due_time:
+    type: string
+  id:
+    type: string
+  modification_time:
+    type: string
+  priority:
+    type: string
+    enum:
+      - CRITICAL
+      - ESSENTIAL
+      - NONESSENTIAL
+  remind_time_mins:
+    type: integer
+    format: int32
+  title:
+    type: string
+  type:
+    type: string
+    enum:
+      - EMAIL
+      - CALL
+      - APPOINTMENT
+      - FAX
+      - LETTER
+      - OTHER

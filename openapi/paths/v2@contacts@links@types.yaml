@@ -1,0 +1,33 @@
+post:
+  tags:
+    - Contact
+  summary: Create a Contact Link Type
+  description: Creates a new type of contact link.
+  operationId: createContactLinkTypeUsingPOST_1
+  requestBody:
+    description: request
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\CreateContactLinkTypeRequest.yaml
+    required: true
+  responses:
+    '201':
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\ContactLinkType.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\Error.yaml
+  x-codegen-request-body-name: request
