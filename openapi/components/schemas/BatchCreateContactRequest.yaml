@@ -3,4 +3,4 @@ properties:
   contacts:
     type: array
     items:
-      $ref: .\CreatePatchContactRequest.yaml
+      $ref: ./CreatePatchContactRequest.yaml

@@ -6,7 +6,7 @@ properties:
   admin:
     type: boolean
   email_address:
-    $ref: .\EmailAddressRequest.yaml
+    $ref: ./EmailAddressRequest.yaml
   given_name:
     type: string
   partner:

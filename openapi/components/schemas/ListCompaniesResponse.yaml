@@ -3,6 +3,6 @@ properties:
   companies:
     type: array
     items:
-      $ref: .\Company.yaml
+      $ref: ./Company.yaml
   next_page_token:
     type: string

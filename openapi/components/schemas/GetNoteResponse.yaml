@@ -1,7 +1,7 @@
 type: object
 properties:
   assigned_to_user:
-    $ref: .\BasicUser.yaml
+    $ref: ./BasicUser.yaml
   contact_id:
     type: string
   create_time:

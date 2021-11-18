@@ -1,7 +1,7 @@
 type: object
 properties:
   address:
-    $ref: .\Address.yaml
+    $ref: ./Address.yaml
   company_name:
     type: string
   create_time:
@@ -9,17 +9,17 @@ properties:
   custom_fields:
     type: array
     items:
-      $ref: .\CustomFieldValue.yaml
+      $ref: ./CustomFieldValue.yaml
   email_address:
-    $ref: .\EmailAddress.yaml
+    $ref: ./EmailAddress.yaml
   fax_number:
-    $ref: .\FaxNumber.yaml
+    $ref: ./FaxNumber.yaml
   id:
     type: string
   notes:
     type: string
   phone_number:
-    $ref: .\PhoneNumber.yaml
+    $ref: ./PhoneNumber.yaml
   update_time:
     type: string
   website:

@@ -1,20 +1,20 @@
 type: object
 properties:
   address:
-    $ref: .\Address.yaml
+    $ref: ./Address.yaml
   company_name:
     type: string
   custom_fields:
     type: array
     items:
-      $ref: .\CustomFieldValue.yaml
+      $ref: ./CustomFieldValue.yaml
   email_address:
-    $ref: .\EmailAddress.yaml
+    $ref: ./EmailAddress.yaml
   fax_number:
-    $ref: .\FaxNumber.yaml
+    $ref: ./FaxNumber.yaml
   notes:
     type: string
   phone_number:
-    $ref: .\PhoneNumber.yaml
+    $ref: ./PhoneNumber.yaml
   website:
     type: string

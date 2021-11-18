@@ -5,4 +5,4 @@ properties:
   tags:
     type: array
     items:
-      $ref: .\Tag.yaml
+      $ref: ./Tag.yaml

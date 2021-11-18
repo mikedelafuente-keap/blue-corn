@@ -1,7 +1,7 @@
 type: object
 properties:
   category:
-    $ref: .\CategoryReference.yaml
+    $ref: ./CategoryReference.yaml
   description:
     type: string
   id:

@@ -1,4 +1,4 @@
 type: object
 properties:
   custom_field:
-    $ref: .\CustomFieldMetaData.yaml
+    $ref: ./CustomFieldMetaData.yaml

@@ -40,7 +40,7 @@ properties:
   options:
     type: array
     items:
-      $ref: .\CreateCustomFieldOptionRequest.yaml
+      $ref: ./CreateCustomFieldOptionRequest.yaml
   user_group_id:
     type: string
     description: >-

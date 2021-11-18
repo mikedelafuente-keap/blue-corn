@@ -3,7 +3,7 @@ properties:
   custom_fields:
     type: array
     items:
-      $ref: .\CustomFieldMetaData.yaml
+      $ref: ./CustomFieldMetaData.yaml
   optional_properties:
     type: array
     description: >-

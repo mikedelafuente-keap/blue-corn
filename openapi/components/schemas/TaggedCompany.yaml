@@ -3,4 +3,4 @@ properties:
   applied_time:
     type: string
   company:
-    $ref: .\Company.yaml
+    $ref: ./Company.yaml

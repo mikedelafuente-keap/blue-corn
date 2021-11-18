@@ -3,4 +3,4 @@ properties:
   users:
     type: array
     items:
-      $ref: .\User.yaml
+      $ref: ./User.yaml

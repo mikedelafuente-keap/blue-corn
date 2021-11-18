@@ -5,4 +5,4 @@ properties:
   options:
     type: array
     items:
-      $ref: .\CreateCustomFieldOptionRequest.yaml
+      $ref: ./CreateCustomFieldOptionRequest.yaml

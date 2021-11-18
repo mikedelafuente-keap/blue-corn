@@ -3,6 +3,6 @@ properties:
   contacts:
     type: array
     items:
-      $ref: .\BasicContact.yaml
+      $ref: ./BasicContact.yaml
   next_page_token:
     type: string

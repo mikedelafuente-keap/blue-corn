@@ -7,4 +7,4 @@ properties:
   options:
     type: array
     items:
-      $ref: .\CustomFieldOption.yaml
+      $ref: ./CustomFieldOption.yaml

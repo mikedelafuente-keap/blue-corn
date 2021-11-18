@@ -5,4 +5,4 @@ properties:
   tagged_companies:
     type: array
     items:
-      $ref: .\TaggedCompany.yaml
+      $ref: ./TaggedCompany.yaml

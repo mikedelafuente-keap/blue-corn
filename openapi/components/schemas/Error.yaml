@@ -1,7 +1,7 @@
 type: object
 properties:
   cause:
-    $ref: .\Throwable.yaml
+    $ref: ./Throwable.yaml
   localizedMessage:
     type: string
   message:
@@ -9,8 +9,8 @@ properties:
   stackTrace:
     type: array
     items:
-      $ref: .\StackTraceElement.yaml
+      $ref: ./StackTraceElement.yaml
   suppressed:
     type: array
     items:
-      $ref: .\Throwable.yaml
+      $ref: ./Throwable.yaml

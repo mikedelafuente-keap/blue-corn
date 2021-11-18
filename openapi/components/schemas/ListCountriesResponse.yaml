@@ -6,4 +6,4 @@ properties:
     type: array
     description: A key-value pair of country code and country name.
     items:
-      $ref: .\Country.yaml
+      $ref: ./Country.yaml

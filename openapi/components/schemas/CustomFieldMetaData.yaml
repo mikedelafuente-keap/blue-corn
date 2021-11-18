@@ -35,7 +35,7 @@ properties:
   options:
     type: array
     items:
-      $ref: .\CustomFieldOption.yaml
+      $ref: ./CustomFieldOption.yaml
   record_type:
     type: string
     enum:

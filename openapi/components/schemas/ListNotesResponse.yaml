@@ -5,4 +5,4 @@ properties:
   notes:
     type: array
     items:
-      $ref: .\Note.yaml
+      $ref: ./Note.yaml

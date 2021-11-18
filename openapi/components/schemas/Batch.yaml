@@ -23,7 +23,7 @@ properties:
   records:
     type: array
     items:
-      $ref: .\BatchResult.yaml
+      $ref: ./BatchResult.yaml
   status:
     type: string
     enum:
